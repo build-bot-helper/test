@@ -1,7 +1,7 @@
 name: AWS OIDC Test2
 
 on:
-  pull_request:
+  pull_request_target:
 
 jobs:
   aws-test:
