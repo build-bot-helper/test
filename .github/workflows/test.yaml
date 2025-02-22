@@ -1,0 +1,29 @@
+name: AWS OIDC Test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  aws-test:
+    runs-on: ubuntu-latest
+    
+    # Required permissions for OIDC
+    permissions:
+      id-token: write
+      contents: read
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::072052744953:role/oidc_test  
+          aws-region: us-east-1  
+
+      - name: Test AWS access
+        run: |
+          aws sts get-caller-identity
+          # Add your AWS CLI commands here
