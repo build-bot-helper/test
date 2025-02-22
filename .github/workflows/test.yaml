@@ -1,14 +1,11 @@
 name: AWS OIDC Test2
 
 on:
+
+  push:
+    branches: [ main ]
   pull_request_target:
-    types: 
-      - opened
-      - reopened
-      - synchronize
-      - ready_for_review
-      - labeled
-      - unlabeled
+
 
 jobs:
   aws-test:
