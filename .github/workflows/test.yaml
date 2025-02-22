@@ -3,6 +3,7 @@ name: AWS OIDC Test
 on:
   push:
     branches: [ main ]
+  pull_request_target:
 
 jobs:
   aws-test:
