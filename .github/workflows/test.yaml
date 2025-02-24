@@ -27,4 +27,5 @@ jobs:
       - name: Test AWS access
         run: |
           aws sts get-caller-identity
+          aws s3 ls
           # Add your AWS CLI commands here
